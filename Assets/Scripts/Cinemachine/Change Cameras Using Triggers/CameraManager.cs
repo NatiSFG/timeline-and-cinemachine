@@ -2,14 +2,30 @@ using UnityEngine;
 using Cinemachine;
 
 public class CameraManager : MonoBehaviour {
-    [SerializeField] private CinemachineVirtualCamera[] cams;
+    [SerializeField] private GameObject[] cams;
+    [SerializeField] private CameraTrigger trigger;
+    
+    public int currentCamIndex;
 
-    public void ResetAllCams() {
-        foreach (var cam in cams)
-            cam.m_Priority = 10;
+    private void Update() {
+        if (trigger.SteppedInTrigger) {
+            if (Input.GetKeyDown(KeyCode.C) && currentCamIndex < cams.Length - 1) {
+                currentCamIndex++;
+                SetActiveCamera(currentCamIndex);
+            } else if (Input.GetKeyDown(KeyCode.C) && currentCamIndex >= cams.Length - 1) {
+                currentCamIndex = 1;
+                SetActiveCamera(currentCamIndex);
+            }
+        }
     }
 
-    public void SetActiveCam(int camera) {
-        cams[camera].m_Priority = 15;
+    public void DeactivateCameras() {
+        foreach (var c in cams)
+            c.SetActive(false);
+    }
+
+    public void SetActiveCamera(int activeCamera) {
+        DeactivateCameras();
+        cams[activeCamera].SetActive(true);
     }
 }
