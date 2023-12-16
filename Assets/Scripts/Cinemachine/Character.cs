@@ -17,8 +17,5 @@ public class Character : MonoBehaviour {
         dir = new Vector3(horizontal, 0, vertical);
         dir *= moveSpeed * Time.deltaTime;
         controller.Move(dir);
-
-        //Vector3 rotation = new Vector3(0, horizontal * rotateSpeed * Time.deltaTime, 0);
-        //this.transform.Rotate(rotation);
     }
 }
