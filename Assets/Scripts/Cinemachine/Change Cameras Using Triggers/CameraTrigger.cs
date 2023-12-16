@@ -1,6 +1,4 @@
 using UnityEngine;
-using UnityEngine.InputSystem;
-using Cinemachine;
 
 public class CameraTrigger : MonoBehaviour {
     [SerializeField] private CameraManager manager;
