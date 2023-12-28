@@ -4,5 +4,11 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Loading Scenes w Timeline/Cylinder Scene.unity
+    guid: e2902b3a2c352274da708b5e94ddb690
+  - enabled: 1
+    path: Assets/Scenes/Loading Scenes w Timeline/Scene 2.unity
+    guid: 76689638047afb04d96753ea06b4e196
   m_configObjects: {}
